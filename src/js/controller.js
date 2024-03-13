@@ -22,14 +22,14 @@ async function controlRecipes() {
     // render recipe
     recipeViews.render(model.state.recipe);
   } catch (err) {
-    alert(err);
+    recipeViews.renderError();
   }
 }
 
-// this avoids any repetition of code
-//
-['hashchange', 'load'].forEach(event => {
-  window.addEventListener(event, controlRecipes);
-});
+// load in all of the recipes and watch for any changes
+// to the hash in the url from recipeViews.js
+function init() {
+  recipeViews.addHandlerRender(controlRecipes);
+}
 
-//5ed6604591c37cdc054bc90b
+init();
