@@ -54,4 +54,4 @@ export async function loadSearchResults(query) {
   }
 }
 
-loadSearchResults('pizza');
+// loadSearchResults('pizza');
